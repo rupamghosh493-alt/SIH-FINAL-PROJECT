@@ -15,7 +15,8 @@ from cv_engine.object_tracker import YoloObjectTracker
 
 BASE = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(BASE, 'instance', 'fsoc_v7.sqlite3')
+db_path = '/tmp/fsoc_v7.sqlite3' if os.environ.get('VERCEL') else os.path.join(BASE, 'instance', 'fsoc_v7.sqlite3')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 socketio = SocketIO(app, cors_allowed_origins='*', async_mode='threading')
