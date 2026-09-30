@@ -6,7 +6,6 @@ reportlab
 # --- Live AI camera pipeline ---
 Flask-SocketIO
 python-socketio
-opencv-python
 numpy
 
 # --- Optional: only needed if you want the YOLO/PyTorch detector path.
@@ -18,4 +17,4 @@ numpy
 # torch
 
 # Required for YOLO + ByteTrack in Live AI Camera
-ultralytics
+opencv-python-headless
