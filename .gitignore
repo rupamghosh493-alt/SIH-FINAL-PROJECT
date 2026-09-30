@@ -18,3 +18,7 @@ instance/*.db
 
 .DS_Store
 Thumbs.db
+.venv/
+__pycache__/
+.vercel/
+*.pyc
